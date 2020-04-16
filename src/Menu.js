@@ -5,14 +5,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import Simples from './Components/Simples'
 import Parimpar from './Components/Parimpar'
 import { Inverter, MegaSena } from './Components/Multi'
+import Contador from './Components/Contador'
 
 function MegaSenaScreen() {
   return <MegaSena numeros={6} />
 }
 
 function InverterScreen() {
-  return <Inverter texto='Alesandro' />
-}
+  return <Inverter texto='capitao america' />
+} 
 
 function ParimparScreen() {
   return [<Parimpar key='1' numero='33' />, <Parimpar key='2' numero='30' />]
@@ -22,12 +23,17 @@ function SimplesScreen() {
   return <Simples texto='flexível' />  
 }
 
+function ContadorScreen() {
+  return <Contador numero={10} />
+}
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
+        <Drawer.Screen name="Contador" component={ ContadorScreen} />
         <Drawer.Screen name="MegaSena" component={ MegaSenaScreen } />
         <Drawer.Screen name="Inverter" component={ InverterScreen } />
         <Drawer.Screen name="Parimpar" component={ ParimparScreen } />
