@@ -10,6 +10,7 @@ import Plataform from './Components/Plataform'
 import ValidarProps from './Components/ValidarProps'
 import Evento from './Components/Evento'
 import { Avo } from './Components/ComunicacaoDireta'
+import TextoSincronizado from './Components/ComunicacaoIndireta'
 
 function MegaSenaScreen() {
   return <MegaSena numeros={6} />
@@ -51,12 +52,17 @@ function AvoScreen() {
   return <Avo nome='Otávio' sobrenome='Facina' />
 }
 
+function TextoSincronizadoScreen() {
+  return <TextoSincronizado />
+}
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
+        <Drawer.Screen name="ComunicaIndireta" component={ TextoSincronizadoScreen } />
         <Drawer.Screen name="ComunicacaoDireta" component={ AvoScreen } />
         <Drawer.Screen name="Evento" component={ EventoScreen } />
         <Drawer.Screen name="ValidarProps" component={ ValidarPropsScreen } />
