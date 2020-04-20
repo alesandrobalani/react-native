@@ -7,6 +7,7 @@ import Parimpar from './Components/Parimpar'
 import { Inverter, MegaSena } from './Components/Multi'
 import Contador from './Components/Contador'
 import Plataform from './Components/Plataform'
+import ValidarProps from './Components/ValidarProps'
 
 function MegaSenaScreen() {
   return <MegaSena numeros={6} />
@@ -32,12 +33,21 @@ function PlataformScreen() {
   return <Plataform />
 }
 
+function ValidarPropsScreen() {
+return [
+        <ValidarProps key='1' label="Teste: " ano={ 18 } />,
+        <ValidarProps key='2' ano={ 18 } />,
+        // <ValidarProps key='3' ano="a" />
+      ]
+}
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
+        <Drawer.Screen name="ValidarProps" component={ ValidarPropsScreen } />
         <Drawer.Screen name="Plataforma" component={ PlataformScreen } />
         <Drawer.Screen name="Contador" component={ ContadorScreen} />
         <Drawer.Screen name="MegaSena" component={ MegaSenaScreen } />
