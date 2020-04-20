@@ -6,6 +6,7 @@ import Simples from './Components/Simples'
 import Parimpar from './Components/Parimpar'
 import { Inverter, MegaSena } from './Components/Multi'
 import Contador from './Components/Contador'
+import Plataform from './Components/Plataform'
 
 function MegaSenaScreen() {
   return <MegaSena numeros={6} />
@@ -27,12 +28,17 @@ function ContadorScreen() {
   return <Contador numero={10} />
 }
 
+function PlataformScreen() {
+  return <Plataform />
+}
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
+        <Drawer.Screen name="Plataforma" component={ PlataformScreen } />
         <Drawer.Screen name="Contador" component={ ContadorScreen} />
         <Drawer.Screen name="MegaSena" component={ MegaSenaScreen } />
         <Drawer.Screen name="Inverter" component={ InverterScreen } />
