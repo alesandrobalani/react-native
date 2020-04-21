@@ -11,6 +11,7 @@ import ValidarProps from './Components/ValidarProps'
 import Evento from './Components/Evento'
 import { Avo } from './Components/ComunicacaoDireta'
 import TextoSincronizado from './Components/ComunicacaoIndireta'
+import ListaFlex from './Components/ListaFlex'
 
 function MegaSenaScreen() {
   return <MegaSena numeros={6} />
@@ -56,12 +57,17 @@ function TextoSincronizadoScreen() {
   return <TextoSincronizado />
 }
 
+function ListaFlexScreen() {
+  return <ListaFlex />
+}
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
+        <Drawer.Screen name="ListaFlex" component={ ListaFlexScreen } />
         <Drawer.Screen name="ComunicaIndireta" component={ TextoSincronizadoScreen } />
         <Drawer.Screen name="ComunicacaoDireta" component={ AvoScreen } />
         <Drawer.Screen name="Evento" component={ EventoScreen } />
