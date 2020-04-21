@@ -36,10 +36,16 @@ const alunos = [
 
 const itemEstilo = {
     paddingHorizontal: 15,
-    height: 50,
+    height: 90,
     backgroundColor: '#DDD',
     borderWidth: 0.5,
-    borderColor: '#222'
+    borderColor: '#222',
+    //flex
+    //cross axys 
+    alignItems: 'center',
+    //main axys
+    justifyContent: 'space-between',
+    flexDirection: 'row'
 }
 
 export const Aluno = props =>
